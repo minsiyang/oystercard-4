@@ -2,20 +2,22 @@ require 'journey'
 require 'oystercard'
 describe Journey do
   let(:journey) {Journey.new}
+  let(:entry_station) { double("entry_station") }
 
     it "journey is not complete when initialzing" do
       expect(journey.journey_complete?).to eq false
     end
 
-    it "create an entry station" do
-      expect(journey.entry_station).to eq ("Bank")
+    it "starts a journey" do
+
+      expect(journey.journey_start).to be entry_station
     end
 
     it "create an exit station" do
       expect(journey.exit_station).to eq ("Hackney")
     end
 
-   
+
 
     # let(:entry_station) { entry_station = double(:station) }
     # let(:exit_station) { exit_station = double(:station) }
@@ -25,7 +27,7 @@ describe Journey do
     # before do
     #     card = Oystercard.new
     #     card.top_up(10)
-    #     card.touch_in(entry_station)   
+    #     card.touch_in(entry_station)
     # end
 
     # context 'journey start' do
@@ -35,7 +37,7 @@ describe Journey do
     # end
 
 
-    
+
     # describe '#touch_in' do
     #   it "should change #in_journey to true" do
     #     expect(subject).to be_in_journey

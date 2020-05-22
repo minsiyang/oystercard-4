@@ -6,7 +6,7 @@ MINIMUM_FARE = 1
   attr_reader :balance, :entry_station, :exit_station, :my_trips
 
   def initialize
-    @balance = 0
+    @balance = 10
     @entry_station = nil
     @my_trips = []
   end
@@ -18,7 +18,7 @@ MINIMUM_FARE = 1
 
   def touch_in(station)
     raise "No money" if balance < MINIMUM_FARE
-    @entry_station = station
+    Journey.journey_start
   end
 
   def touch_out(station)
