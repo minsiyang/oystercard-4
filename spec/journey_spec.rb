@@ -3,8 +3,8 @@ require 'oystercard'
 describe Journey do
   let(:journey) {Journey.new}
 
-    it "complete the journey" do
-      expect(journey.complete?).to be true
+    it "journey is not complete when initialzing" do
+      expect(journey.journey_complete?).to eq false
     end
 
     it "create an entry station" do
