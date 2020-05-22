@@ -1,16 +1,21 @@
 require 'journey'
 require 'oystercard'
 describe Journey do
-    
+  let(:journey) {Journey.new}
+
     it "complete the journey" do
-        journey = Journey.new("Bank")
       expect(journey.complete?).to be true
     end
 
-    it "create a entry station and exit station when initialzing" do
-      journey = Journey.new("Bank")
-      expect(journey.entry_station).to eq "Bank"
+    it "create an entry station" do
+      expect(journey.entry_station).to eq ("Bank")
     end
+
+    it "create an exit station" do
+      expect(journey.exit_station).to eq ("Hackney")
+    end
+
+   
 
     # let(:entry_station) { entry_station = double(:station) }
     # let(:exit_station) { exit_station = double(:station) }
